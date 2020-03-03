@@ -12,4 +12,4 @@
 * 查看用户、删除评论
 * 上映电影
 
-![](https://github.com/lvhang1996/Movie-/raw/photoToShow/1.png)  
+![](https://github.com/lvhang1996/Movie-/photoToShow/1.png)  
