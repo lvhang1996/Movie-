@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<package name="default" extends="struts-default" namespace="/">
+	<!--游客登录、注册-->
+        <action name="visitorLogin" class="loginAction" method="visitorLogin">
+            <result name="success"  type="redirect">/index.jsp</result>
+            <result name="input">/login.jsp</result>
+        </action>
+        <action name="visitorRegister" class="registerAction" method="visitorRegister">
+            <result name="success"  type="redirect">/login.jsp</result>
+            <result name="input">/register.jsp</result>
+        </action>
+        <!-- 特别的登录 -->
+        <action name="visitorLoginS" class="loginAction" method="visitorLoginS">
+            <result name="success"  type="redirect">/movieMessage.jsp</result>
+            <result name="input">/login.jsp</result>
+        </action>
+        <!-- 退出 -->
+        <action name="out" class="out" method="out">
+            <result name="success"  type="redirect">/index.jsp</result>
+            <result name="input">/error.jsp</result>
+        </action>
+        <!-- 账号管理 -->
+        <action name="findUpdateVisitor" class="findVisitorAction" method="findUpdateVisitor"><!--寻找出要更新的  -->
+            <result name="success"  type="redirect">/visitorUpdate.jsp</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <action name="visitorUpdate" class="updateVisitorAction" method="visitorUpdate">
+            <result name="success"   type="redirect">/visitorUpdateSuccess.jsp</result>
+            <result name="input">/visitorUpdate.jsp</result>
+        </action>
+        <action name="findUpdateVisitorPassword" class="findVisitorAction" method="findUpdateVisitor"><!--寻找出要更改密码  -->
+            <result name="success"  type="redirect">/visitorUpdatePassword.jsp</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <action name="visitorUpdatePassword" class="updateVisitorAction" method="visitorUpdatePassword">
+            <result name="success"   type="redirect">/visitorUpdateSuccess.jsp</result>
+            <result name="input">/visitorUpdatePassword.jsp</result>
+        </action>
+        <action name="visitorDelete" class="deleteVisitorAction" method="visitorDelete">
+            <result name="success"   type="chain">out</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <!-- 个人中心 -->
+        <action name="center" class="commentAction" method="findComment">
+            <result name="success"  type="redirect">/center.jsp</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <action name="findMovieDianJi" class="findMovieAction" method="findMovieDianJi">
+            <result name="success"  type="redirect">/movieMessage.jsp</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <action name="deleteComment" class="commentAction" method="deleteComment">
+            <result name="success"  type="redirect">/center.jsp</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <!-- 我的钱包 -->
+        <action name="qianbao" class="moneyAction" method="qianbao">
+            <result name="success"  type="redirect">/qianbao.jsp</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <action name="recharge" class="moneyAction" method="recharge">
+            <result name="success"  type="redirect">/qianbao.jsp</result>
+            <result name="input">/recharge.jsp</result>
+        </action>
+    <!-- 首页action -->
+    	<action name="index" class="indexAction" method="index">
+            <result name="success" >/index.jsp</result>
+            <result name="input">/error.jsp</result>
+        </action>
+    <!-- find所有信息 -->
+    	<action name="find" class="findAction" method="find"><!--所有电影 -->
+            <result name="success"  type="redirect">/find.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+    <!-- order排序信息 -->
+    	<action name="order" class="orderAction" method="order"><!--所有电影 -->
+            <result name="success"  type="redirect">/order.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+    <!-- 电影 -->
+		<action name="allMovie" class="findMovieAction" method="findAllMovie"><!--所有电影 -->
+            <result name="success"  type="redirect">/allMovie.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="oneMovie" class="findMovieAction" method="findOneMovie"><!--电影详细信息 -->
+            <result name="success"  type="redirect">/movieMessage.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="typeMovie" class="findMovieAction" method="findTypeMovie"><!--电影类型查询 -->
+            <result name="success"  type="redirect">/allMovie.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="countryMovie" class="findMovieAction" method="findCountryMovie"><!--电影国家查询 -->
+            <result name="success"  type="redirect">/allMovie.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="onshowMovie" class="findMovieAction" method="findOnShow">
+            <result name="success"  type="redirect">/onshow.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        
+        <!-- 排序 -->
+        <action name="reduOrder" class="orderMovieAction" method="reduOrderMovie"><!--电影国家查询 -->
+            <result name="success"  type="redirect">/allMovie.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="shijianOrder" class="orderMovieAction" method="shijianOrderMovie"><!--电影国家查询 -->
+            <result name="success"  type="redirect">/allMovie.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="pingfenOrder" class="orderMovieAction" method="pingfenOrderMovie"><!--电影国家查询 -->
+            <result name="success"  type="redirect">/allMovie.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        
+        <!-- 购票 -->
+        <action name="buy" class="moneyAction" method="buy">
+            <result name="success"  type="redirect">/video.jsp</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+		
+    <!-- 演员 -->    
+        <action name="allActor" class="findActorAction" method="findAllActor"><!--所有电影 -->
+            <result name="success"  type="redirect">/allActor.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="oneActor" class="findActorAction" method="findOneActor"><!--电影信息 -->
+            <result name="success"  type="redirect">/actorMessage.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="countryActor" class="findActorAction" method="findCountryActor"><!--演员国家查询 -->
+            <result name="success"  type="redirect">/allActor.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="oneActorFM" class="findActorAction" method="findOneActorFM"><!-- 电影页面进入演员页面 -->
+            <result name="success"  type="redirect">/actorMessage.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+     <!-- 评论 -->
+     	<action name="addComment" class="commentAction" method="addComment"><!--所有电影 -->
+            <result name="success"  type="redirect">/movieMessage.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+	</package>
+</struts>    

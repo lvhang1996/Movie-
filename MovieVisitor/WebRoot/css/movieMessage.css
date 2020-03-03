@@ -1,0 +1,63 @@
+body{
+    padding: 50px;
+}
+.all{
+    margin-top: 100px;
+    position: absolute;
+    width: 70%;
+    left: 15%;
+}
+.main{
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    height: 450px;
+    padding: 20px;
+
+}
+.biaoqian{
+    position: relative;
+    width: 70%;
+    left: 15%;
+    top: 600px;
+    padding: 20px;
+}
+.main_left{
+    position: absolute;
+    left: 5%;
+    width: 68%;
+    height: 500px;
+    border: 2px solid;
+    border-bottom-color: green;
+    border-right-color: white;
+    border-top-color:white ;
+    border-left-color: white;
+}
+.main_right{
+    position: absolute;
+    right: 10%;
+    width: 15%;
+    height: 300px;
+}
+.main_left_img{
+    position: absolute;
+    left: 5px;
+    width: 150px;
+    height: 200px;
+}
+.main_left_mes{
+    position: absolute;
+    left: 180px;
+    height: 90%;
+    width: 550px;
+}
+.main_left_jianjie{
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    top: 250px;
+}
+table td{
+    height: 30px;
+    font-size: 15px;
+}

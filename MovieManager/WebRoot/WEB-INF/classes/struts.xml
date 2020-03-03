@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<package name="default" extends="struts-default" namespace="/">
+		<!--管理员登录、注册-->
+        <action name="managerLogin" class="loginAction" method="managerLogin">
+            <result name="success"  type="redirect">/managerIndex.jsp</result>
+            <result name="input">/managerLogin.jsp</result>
+        </action>
+        <action name="managerRegister" class="registerAction" method="managerRegister">
+            <result name="success"  type="redirect">/managerLogin.jsp</result>
+            <result name="input">/managerRegister.jsp</result>
+        </action>
+        <!--电影信息  -->
+        <action name="addMovie" class="addMovieAction" method="addMovie">
+            <result name="success" type="redirect">/addMovieSuccess.jsp</result>
+            <result name="input" >/addMovie.jsp</result>
+        </action>
+        <action name="lookMovie" class="findMovieAction" method="findAllMovie"><!--所有电影加到电影信息页面  -->
+            <result name="success"  type="redirect">/lookMovie.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="lookOnshowMovie" class="findMovieAction" method="findAllMovie"><!--所有电影加到电影信息页面  -->
+            <result name="success"  type="redirect">/cinema.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="findMoviename" class="findMovieAction" method="findMoviename"><!--查找电影  -->
+            <result name="success"  type="redirect">/findMovie.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="findOneMovie" class="findMovieAction" method="findOneMovie"><!--寻找出要更新的  -->
+            <result name="success"  type="redirect">/updateMovie.jsp</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <action name="findOneMovieMessage" class="findMovieAction" method="findOneMovie"><!--查看电影所有信息  -->
+            <result name="success"  type="redirect">/lookMovieMessage.jsp</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <action name="updateMovie" class="updateMovieAction" method="updateMovie">
+            <result name="success"   type="chain">lookMovie</result>
+            <result name="input">/updateMovie.jsp</result>
+        </action>
+        <action name="deleteMovie" class="deleteMovieAction" method="deleteMovie">
+            <result name="success"   type="chain">lookMovie</result><!-- chain返回action -->
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <!-- 上映 -->
+        <action name="findOnshowMovie" class="findMovieAction" method="findOneMovie"><!--寻找出上映电影 -->
+            <result name="success"  type="redirect">/onshow.jsp</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <action name="findOffshowMovie" class="findMovieAction" method="findOneMovie"><!--寻找出上映电影 -->
+            <result name="success"  type="redirect">/offshow.jsp</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <action name="updateOnshowMovie" class="updateMovieAction" method="updateOnshowMovie"><!--上映 -->
+            <result name="success"  type="chain">lookOnshowMovie</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <action name="updateOffshowMovie" class="updateMovieAction" method="updateOffshowMovie"><!--上映 -->
+            <result name="success"  type="chain">lookOnshowMovie</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <!--电影中演员  -->
+        <action name="findMovieActor" class="findActorAction" method="findMovieActor"><!--寻找电影中的演员 -->
+            <result name="success"  type="redirect">/movieActor.jsp</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <action name="findOneMovieActor" class="findActorAction" method="findOneMovieActor"><!--寻找电影中的演员需要修改 -->
+            <result name="success"  type="redirect">/movieUpdateActor.jsp</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <action name="addMovieActor" class="addMovieActorAction" method="addMovieActor"><!--演员饰演角色 -->
+            <result name="success"   type="redirect">/movieActor.jsp</result>
+            <result name="input" >/movieAddActor.jsp</result>
+        </action>
+        <action name="updateMovieActor" class="updateMovieActorAction" method="updateMovieActor"><!--更新演员饰演角色 -->
+            <result name="success"   type="redirect">/movieActor.jsp</result>
+            <result name="input" >/movieUpdateActor.jsp</result>
+        </action>
+        <action name="deleteMovieActor" class="deleteMovieActorAction" method="deleteMovieActor"><!--演员饰演角色 -->
+            <result name="success"   type="redirect">/movieActor.jsp</result>
+            <result name="input" type="redirect">/error.jsp</result>
+        </action>
+        <!--演员  -->
+        <action name="lookActor" class="findActorAction" method="findAllActor"><!--所有演员  -->
+            <result name="success"  type="redirect">/lookActor.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="findActorName" class="findActorAction" method="findActorName"><!--模糊查询  -->
+            <result name="success"  type="redirect">/findActor.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="findOneActorId" class="findActorAction" method="findOneActorId"><!--所有演员  -->
+            <result name="success"  type="redirect">/updateActor.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="updateActor" class="updateActorAction" method="updateActor">
+            <result name="success"  type="redirect">/lookActor.jsp</result>
+            <result name="input" >/updateActor.jsp</result>
+        </action>
+        <action name="addActor" class="addActorAction" method="addActor">
+            <result name="success" type="redirect">/addActorSuccess.jsp</result>
+            <result name="input" >/addActor.jsp</result>
+        </action>
+        <action name="deleteActor" class="deleteActorAction" method="deleteActor">
+            <result name="success"  type="redirect">/lookActor.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <!-- 评论 -->
+        <action name="lookMovieC" class="findMovieAction" method="findAllMovie">
+            <result name="success"  type="redirect">/lookMovieComment.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="lookMovieComment" class="commentAction" method="lookMovieComment">
+            <result name="success"  type="redirect">/comment.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="findComment" class="commentAction" method="findMovieComment">
+            <result name="success"  type="redirect">/comment.jsp</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+        <action name="updateComment" class="commentAction" method="updateComment">
+            <result name="success"  type="chain">lookMovieC</result>
+            <result name="input" >/error.jsp</result>
+        </action>
+    </package>
+</struts>    

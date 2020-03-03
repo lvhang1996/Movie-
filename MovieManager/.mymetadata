@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="MovieManager"
+  id="myeclipse.1521014633626"
+  context-root="/MovieWeb"
+  j2ee-spec="5.0"
+  archive="MovieManager.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

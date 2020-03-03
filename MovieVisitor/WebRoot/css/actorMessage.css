@@ -1,0 +1,42 @@
+body{
+    padding: 50px;
+}
+.all{
+    margin-top: 100px;
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    height: 1000px;
+}
+.top{
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    height: 350px;
+    padding: 20px;
+}
+.top_left{
+    position: absolute;
+    left: 20px;
+    width: 150px;
+    height: 200px;
+}
+.top_right{
+    position: absolute;
+    left: 200px;
+    height: 90%;
+    width: 550px;
+}
+
+.bottom{
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    top: 300px;
+    height: 580px;
+    padding: 20px;
+}
+table td{
+    height: 30px;
+    font-size: 15px;
+}

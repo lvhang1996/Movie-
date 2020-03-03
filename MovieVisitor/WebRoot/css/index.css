@@ -1,0 +1,51 @@
+.tupiangudong{
+    margin-top: 100px;
+    height: 500px;
+}
+.gunimg{
+    height: 600px;
+    width: 800px;
+}
+.item{
+    height: 500px;
+}
+.reying{
+    position: relative;
+    left: 250px;
+    width: 60%;
+    height: 450px;
+    padding: 2px;
+}
+.remen{
+    position: relative;
+    left: 250px;
+    width: 60%;
+    height: 700px;
+    padding: 2px;
+}
+.koubei{
+    position: absolute;
+    top: 600px;
+    right: 150px;
+    width: 25%;
+    height: 800px;
+    margin: 3px;
+}
+.wei{
+    text-align: center;
+    padding-bottom: 0px;
+}
+.reying_movie{
+    left: 3px;
+    position: relative;
+    float: left;
+    width: 170px;
+    height: 320px;
+}
+.remen_movie{
+    left: 3px;
+    position: relative;
+    float: left;
+    width: 170px;
+    height: 250px;
+}
