@@ -12,4 +12,7 @@
 * 查看用户、删除评论
 * 上映电影
 
-![](https://github.com/lvhang1996/Movie-/photoToShow/1.png)  
+![](https://github.com/lvhang1996/Movie-/blob/master/photoToShow/1.png)  
+![](https://github.com/lvhang1996/Movie-/blob/master/photoToShow/2.png)  
+![](https://github.com/lvhang1996/Movie-/blob/master/photoToShow/3.png)  
+![](https://github.com/lvhang1996/Movie-/blob/master/photoToShow/4.png)  
